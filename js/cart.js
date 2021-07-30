@@ -26,11 +26,13 @@ function clearCart() {
 }
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
-function showCart(cart) {
+function showCart(tagName, parent, text) {
+  const element = document.createElement(tagName);
+  parent.appendChild(element);
   let tbodyElem = document.querySelector('tbody');
-  for (let i = 0; i < cart.length; i++){
+  for (let i = 0; i < cart.length; i++) {
     const trElem = newElement('tr', tbodyElem, null);
-    for (let j = 0; j < items.length; j++){
+    for (let j = 0; j < items.length; j++) {
       const tdElem = newElement('td', trElem, null);
       tdElem.textContent = items[j];
     }
@@ -47,7 +49,7 @@ function showCart(cart) {
 function removeItemFromCart(event) {
   event.target.querySelector('td')
   if (event.target)
-  const emptyButton = document.querySelector('cart');
+    const emptyButton = document.querySelector('cart');
   const cartItems = getItem();
   cartItems.innerHTML = '';
   cart.removeItem
